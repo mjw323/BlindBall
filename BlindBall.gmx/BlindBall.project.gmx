@@ -59,6 +59,7 @@
       </objects>
     </objects>
     <object>objects\oPuff</object>
+    <object>objects\oControl</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Menu</room>
