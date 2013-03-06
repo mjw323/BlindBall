@@ -63,13 +63,14 @@
     <room>rooms\Menu</room>
     <room>rooms\Level1</room>
   </rooms>
-  <constants number="8">
+  <constants number="9">
     <constant name="NETWORK_LOGIN">0</constant>
     <constant name="NETWORK_PLAY">1</constant>
     <constant name="PING_CMD">2</constant>
     <constant name="LEFT_KEY">0</constant>
     <constant name="RIGHT_KEY">1</constant>
-    <constant name="JUMP_KEY">2</constant>
+    <constant name="UP_KEY">2</constant>
+    <constant name="DOWN_KEY">3</constant>
     <constant name="KEY_CMD">0</constant>
     <constant name="NAME_CMD">1</constant>
   </constants>
