@@ -20,6 +20,7 @@
     <sprite>sprites\sPuff</sprite>
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sSpikes</sprite>
+    <sprite>sprites\sGuide</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background2</background>
