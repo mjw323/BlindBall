@@ -30,6 +30,8 @@ clientx = 64;   // player start X and Y
 clienty = 192;
 PlayerName=global.ServerName;   // get the name that was selected (it's a server OR player name)
 
+winfx=0; losefx=0;
+
 // Create a buffer for the network messages
 buff = buffer_create(256, buffer_grow, 1);
 // Create a TCP/IP socket
@@ -114,6 +116,9 @@ if( client == eventid )
         {
             // Read all data....
             var buff = ds_map_find_value(async_load, "buffer");
+            //winfx = buffer_read(buff, buffer_f32 ); 
+            //losefx = buffer_read(buff, buffer_f32 ); 
+            
             // Get number of sprites sent
             sprites = buffer_read(buff, buffer_u32 ); 
             
@@ -207,8 +212,12 @@ for(i=0;i&lt;sprites;i++){
     //draw_text(xx+16,yy-20,name);
 }
 
+draw_set_color(c_black); 
+draw_text(320,240,"win: "+string(winfx)+", lose: "+string(losefx))
 
-
+/*
+draw_set_color(c_red); draw_circle(view_xview+320,view_yview+240,sqr(losefx)*sqrt(sqr(320)+sqr(320)),false);
+draw_set_color(c_blue); draw_circle(view_xview+320,view_yview+240,sqr(winfx)*sqrt(sqr(320)+sqr(320)),false);
 
 
 </string>
