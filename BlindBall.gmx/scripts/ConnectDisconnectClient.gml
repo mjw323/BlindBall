@@ -32,7 +32,7 @@
 
                 // Delete the socket from out map, and kill the player instance
         ds_map_delete(Clients, sock );
-        with(inst) { instance_destroy(); }
+//        with(inst) { instance_destroy(); }
         
         // Also delete the socket from our global list of connected clients
         var index = ds_list_find_index( socketlist, sock );
