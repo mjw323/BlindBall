@@ -35,9 +35,11 @@
          
         // translate updown into a bool for the player array       
         if( updown==0 ){
-            inst.keys[key] = false;
+            inst.keys[key] -=1;
+            if inst.keys[key]<0{inst.keys[key]=0}
         }else{
-            inst.keys[key] = true;
+            inst.keys[key] +=1;
+            if inst.keys[key]>2{inst.keys[key]=2}
         }
     }
     // Is this a NAME command?

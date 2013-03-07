@@ -38,7 +38,7 @@ instance_create(xp,yp,oGoal);
 instance_create(room_width-xp,room_height-yp,oPlayer);
 
 /**/
-repeat(18){
+repeat(16){
 var times=100,xp,yp,o;
 do{
 xp=320+random(room_width-640);
@@ -46,7 +46,7 @@ yp=240+random(room_height-480);
 o=instance_nearest(xp,yp,oSpike);
 times--;
 }
-until((times&lt;=0 or !instance_exists(o) or point_distance(xp,yp,o.x,o.y)&gt;200) and point_distance(xp,yp,oPlayer.x,oPlayer.y)&gt;200 and point_distance(xp,yp,oGoal.x,oGoal.y)&gt;200)
+until((times&lt;=0 or !instance_exists(o) or point_distance(xp,yp,o.x,o.y)&gt;300) and point_distance(xp,yp,oPlayer.x,oPlayer.y)&gt;200 and point_distance(xp,yp,oGoal.x,oGoal.y)&gt;200)
 
 
 var spike=instance_create(xp,yp,oSpike);

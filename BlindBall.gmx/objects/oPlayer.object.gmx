@@ -103,25 +103,26 @@ var xx,yy,c1,c2;
 var hforce=0,vforce=0;
 
 // If moving left, check LEFT collision
-if( keys[LEFT_KEY] ) 
+repeat( keys[LEFT_KEY] ) 
 {
     hforce-=6;
 }
-if(keys[RIGHT_KEY] )
+repeat(keys[RIGHT_KEY] )
 {
     hforce+=6;   
 }
-if(keys[UP_KEY] )
+repeat(keys[UP_KEY] )
 {
     vforce-=6;   
 }
-if(keys[DOWN_KEY] )
+repeat(keys[DOWN_KEY] )
 {
     vforce+=6;  
 }
 
 hspeed+=(hforce-hspeed)*.05; 
 vspeed+=(vforce-vspeed)*.05;
+
 hspeed=max(-6,min(6,hspeed));
 vspeed=max(-6,min(6,vspeed));
 
