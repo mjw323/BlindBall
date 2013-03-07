@@ -21,6 +21,7 @@
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sSpikes</sprite>
     <sprite>sprites\sGuide</sprite>
+    <sprite>sprites\sGoal</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background2</background>
@@ -60,6 +61,8 @@
     </objects>
     <object>objects\oPuff</object>
     <object>objects\oControl</object>
+    <object>objects\oGoal</object>
+    <object>objects\oSpike</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Menu</room>

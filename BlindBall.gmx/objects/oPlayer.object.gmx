@@ -125,8 +125,8 @@ vspeed+=(vforce-vspeed)*.05;
 hspeed=max(-6,min(6,hspeed));
 vspeed=max(-6,min(6,vspeed));
 
-x=max(0,min(room_width,x));
-y=max(0,min(room_height,y));
+x=max(320,min(room_width-320,x));
+y=max(240,min(room_height-240,y));
 </string>
           </argument>
         </arguments>
