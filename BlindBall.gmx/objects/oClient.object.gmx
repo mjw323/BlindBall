@@ -179,6 +179,12 @@ for(i=0;i&lt;sprites;i++){
 
     draw_sprite_ext(sp,spindex,xx,yy,1,1,0,col,1.0);
     
+    if sp = sPlayer{
+    draw_set_blend_mode(bm_add);
+    draw_sprite_ext(sGuide,0,xx,yy,1,1,point_direction(xx,yy,oGoal.x,oGoal.y),c_white,.5);
+    draw_set_blend_mode(bm_normal);
+    }
+    
     draw_set_color(c_white);
     draw_set_font(fName);
     draw_set_halign(fa_center);
