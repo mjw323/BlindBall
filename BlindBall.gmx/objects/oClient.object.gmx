@@ -177,11 +177,23 @@ for(i=0;i&lt;sprites;i++){
     col = ds_list_find_value(allsprites,index++);
     name = ds_list_find_value(allsprites,index++);
 
-    draw_sprite_ext(sp,spindex,xx,yy,1,1,0,col,1.0);
+    if sp=sSpikes{
+    if instance_exists(oServer){if name!=2{draw_sprite_ext(sp,spindex,xx,yy,1,1,col,c_white,1.0);}}
+    else{if name!=1{draw_sprite_ext(sp,spindex,xx,yy,1,1,col,c_white,1.0);}}
+    }
+    else{
+    draw_sprite_ext(sp,spindex,xx,yy,1,1,col,c_white,1.0);
+    }
+    
+    if sp = sGoal{
+    gx = xx; gy = yy;
+    }
+    
     
     if sp = sPlayer{
+    px=xx; py=yy;
     draw_set_blend_mode(bm_add);
-    draw_sprite_ext(sGuide,0,xx,yy,1,1,point_direction(xx,yy,oGoal.x,oGoal.y),c_white,.5);
+    draw_sprite_ext(sGuide,0,xx,yy,1,1,point_direction(xx,yy,gx,gy),c_white,.5);
     draw_set_blend_mode(bm_normal);
     }
     

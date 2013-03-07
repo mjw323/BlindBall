@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(oServer){
+            <string>globalvar px,py,gx,gy;
+px=0; py=0;
+gx=0; gy=0;
+
+if instance_exists(oServer){
 var xpyp;
 xp=choose(112+320,room_width-112-320);
 yp=choose(112+240,room_height-112-240);
@@ -70,8 +74,10 @@ spike.owner=floor(random(3));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_xview+=((oPlayer.x-(view_wview/2))-view_xview)*.1;
-view_yview+=((oPlayer.y-(view_hview/2))-view_yview)*.1;
+            <string>if instance_exists(oPlayer){px=oPlayer.x; py=oPlayer.y}
+
+view_xview+=((px-(view_wview/2))-view_xview)*.1;
+view_yview+=((py-(view_hview/2))-view_yview)*.1;
 </string>
           </argument>
         </arguments>
