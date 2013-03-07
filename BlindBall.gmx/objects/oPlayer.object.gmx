@@ -100,90 +100,33 @@ var xx,yy,c1,c2;
 //grav+=0.4;
 //if( grav&gt;=10 ) grav=10;
 
-// If falling, check UNDER the player
-if( grav&lt;0 )
-{
-    
-    c2 = -1;
-    c1 = GetCollision(x,y);
-    if( (x&amp;$1f)&gt;0 ) {
-        c2=GetCollision(x+32,y);
-    }
-    if( c1&gt;=0 || c2&gt;=0 )
-    {
-        grav=0;
-        y = (y&amp;$ffffffe0)+32;
-    }
-}
-else{
-    // Otherwise, check above player
-    c2 = -1;
-    c1 = GetCollision(x,y+32);
-    if( (x&amp;$1f)&gt;0 ) {
-        c2=GetCollision(x+32,y+32);
-    }
-    if( c1&gt;=0 || c2&gt;=0 )
-    {
-        y = (y&amp;$ffffffe0);          
-    }
-}    
+var hforce=0,vforce=0;
 
 // If moving left, check LEFT collision
 if( keys[LEFT_KEY] ) 
 {
-    dir=-1;
-    x=x-xspeed;
-    c2=-1;
-    c1 = GetCollision(x,y);
-    if( (y&amp;$1f)&gt;0 ) c2=GetCollision(x,y+32);
-    if(  c1&gt;=0 ) || ( c2&gt;=0 )
-    {
-        x = (x&amp;$ffffffe0)+32;
-    }    
-}else if(keys[RIGHT_KEY] )
+    hforce-=6;
+}
+if(keys[RIGHT_KEY] )
 {
-    // Otherwise, check collision to the right
-    dir=1;
-    x=x+xspeed;
-    c2 = -1;
-    c1 = GetCollision(x+32,y);
-    if( (y&amp;$1f)&gt;0 ) c2=GetCollision(x+32,y+32);
-    if(  c1&gt;=0 ) || ( c2&gt;=0 )
-    {
-        x = (x&amp;$ffffffe0);
-    }    
-}else if(keys[UP_KEY] )
+    hforce+=6;   
+}
+if(keys[UP_KEY] )
 {
-    // Otherwise, check collision above
-    dir=1;
-    y=y-xspeed;
-    c2 = -1;
-    c1 = GetCollision(x,y+32);
-    if( (x&amp;$1f)&gt;0 ) c2=GetCollision(x+32,y+32);
-    if(  c1&gt;=0 ) || ( c2&gt;=0 )
-    {
-        y = (y&amp;$ffffffe0)+32;
-    }    
-}else if(keys[DOWN_KEY] )
+    vforce-=6;   
+}
+if(keys[DOWN_KEY] )
 {
-    // Otherwise, check collision below
-    dir=1;
-    y=y+xspeed;
-    c2 = -1;
-    c1 = GetCollision(x,y);
-    if( (x&amp;$1f)&gt;0 ) c2=GetCollision(x+32,y);
-    if(  c1&gt;=0 ) || ( c2&gt;=0 )
-    {
-        y = (y&amp;$ffffffe0)+32;
-    }    
-}else {
-    // If standing still, don't animate
-    image_index =0;
+    vforce+=6;  
 }
 
+hspeed+=(hforce-hspeed)*.05; 
+vspeed+=(vforce-vspeed)*.05;
+hspeed=max(-6,min(6,hspeed));
+vspeed=max(-6,min(6,vspeed));
 
-
-
+x=max(0,min(room_width,x));
+y=max(0,min(room_height,y));
 </string>
           </argument>
         </arguments>
