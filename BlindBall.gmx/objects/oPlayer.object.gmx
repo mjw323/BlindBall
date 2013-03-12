@@ -34,6 +34,7 @@ PlayerName="";
 // 3 keys: left, right and jump (could be more)
 for(var i=0;i&lt;4;i++){
     keys[i] = false;
+    keys2[i] = false;
 }
 
 // basic movement setup
@@ -103,19 +104,19 @@ var xx,yy,c1,c2;
 var hforce=0,vforce=0;
 
 // If moving left, check LEFT collision
-repeat( keys[LEFT_KEY] ) 
+repeat( keys[LEFT_KEY] + keys2[LEFT_KEY]) 
 {
     hforce-=6;
 }
-repeat(keys[RIGHT_KEY] )
+repeat(keys[RIGHT_KEY] + keys2[LEFT_KEY])
 {
     hforce+=6;   
 }
-repeat(keys[UP_KEY] )
+repeat(keys[UP_KEY] + keys2[UP_KEY])
 {
     vforce-=6;   
 }
-repeat(keys[DOWN_KEY] )
+repeat(keys[DOWN_KEY] + keys2[DOWN_KEY])
 {
     vforce+=6;  
 }

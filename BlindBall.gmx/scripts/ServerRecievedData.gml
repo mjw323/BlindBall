@@ -18,6 +18,8 @@
         var key = buffer_read(buff, buffer_s16 );
         // And it's up/down state
         var updown = buffer_read(buff, buffer_s16 );
+        
+        var player = buffer_read(buff, buffer_s16 );
     
         // translate keypress into an index for our player array.
         if( key==vk_left ) {
@@ -35,10 +37,12 @@
          
         // translate updown into a bool for the player array       
         if( updown==0 ){
-            inst.keys[key] = false;
+            if player{inst.keys[key] = false;}
+            else{inst.keys2[key] = false;}
             if inst.keys[key]<0{inst.keys[key]=0}
         }else{
-            inst.keys[key] = true;
+            if player{inst.keys[key] = true;}
+            else{inst.keys2[key] = true;}
             if inst.keys[key]>2{inst.keys[key]=2}
         }
     }

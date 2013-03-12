@@ -11,6 +11,9 @@
     buffer_write(buff, buffer_s16, KEY_CMD );
     buffer_write(buff, buffer_s16, argument0 );
     buffer_write(buff, buffer_s16, argument1 );
+    if instance_exists(oServer){buffer_write(buff, buffer_s16, 1 ); //player identifier
+    }
+    else{buffer_write(buff, buffer_s16, 0 );}
 
     // Send this to the server
     network_send_packet( client, buff, buffer_tell(buff) );
