@@ -186,8 +186,8 @@ for(i=0;i&lt;sprites;i++){
 //waste = ds_list_find_value(allsprites,index++); show_message(string(i)+", waste= "+string(ds_list_find_value(allsprites,index-1)));
     
     if sp=sSpikes{
-    if instance_exists(oServer){if name!=2{draw_sprite_ext(sp,0,xx,yy,1,1,col,c_white,1.0);}}
-    else{if name!=1{draw_sprite_ext(sp,0,xx,yy,1,1,col,c_white,1.0);}}
+    if instance_exists(oServer){if name!=2 or losefx&gt;0{draw_sprite_ext(sp,0,xx,yy,1,1,col,c_white,1.0);}}
+    else{if name!=1 or losefx&gt;0{draw_sprite_ext(sp,0,xx,yy,1,1,col,c_white,1.0);}}
     }
     else
     {
@@ -208,20 +208,24 @@ for(i=0;i&lt;sprites;i++){
     }
     
     draw_set_color(c_white);
-    draw_set_font(fName);
+    draw_set_font(fScore);
     draw_set_halign(fa_center);
     //draw_text(xx+16,yy-20,name);
 }
 
-draw_set_color(c_black); 
-draw_text(320,240,"win: "+string(winfx)+", lose: "+string(losefx))
 
-
-draw_set_alpha(.5);
+draw_set_alpha(.75);
 draw_set_color(c_red); draw_circle(view_xview+320,view_yview+240,sqr(losefx)*sqrt(sqr(320)+sqr(320)),false);
 draw_set_color(c_blue); draw_circle(view_xview+320,view_yview+240,sqr(winfx)*sqrt(sqr(320)+sqr(320)),false);
 
+draw_set_alpha(power(losefx,3)); draw_set_halign(fa_left);
+draw_set_color(c_white); draw_text(view_xview+100,view_yview+100,"Lose.");
 
+draw_set_alpha(power(winfx,3));
+draw_set_color(c_white); draw_text(view_xview+100,view_yview+100,"Win.");
+
+draw_set_halign(fa_center); draw_set_alpha(power(max(winfx,losefx),3));
+draw_text(view_xview+(view_wview/2),view_yview+(view_hview/2),"Press space.");
 </string>
           </argument>
         </arguments>

@@ -108,7 +108,7 @@ repeat( keys[LEFT_KEY] + keys2[LEFT_KEY])
 {
     hforce-=6;
 }
-repeat(keys[RIGHT_KEY] + keys2[LEFT_KEY])
+repeat(keys[RIGHT_KEY] + keys2[RIGHT_KEY])
 {
     hforce+=6;   
 }
@@ -126,6 +126,8 @@ vspeed+=(vforce-vspeed)*.05;
 
 hspeed=max(-6,min(6,hspeed));
 vspeed=max(-6,min(6,vspeed));
+
+if oClient.winfx&gt;0 or oClient.losefx&gt;0{hspeed=0; vspeed=0;}
 
 x=max(320,min(room_width-320,x));
 y=max(240,min(room_height-240,y));
