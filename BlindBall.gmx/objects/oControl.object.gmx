@@ -43,7 +43,7 @@ instance_create(xp,yp,oGoal);
 instance_create(room_width-xp,room_height-yp,oPlayer);
 
 /**/
-repeat(16+(min(8,oServer.cleared))){
+repeat(10+(min(10,oServer.cleared))){
 var times=100,xp,yp,o;
 do{
 xp=320+random(room_width-640);
