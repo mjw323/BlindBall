@@ -32,6 +32,8 @@ gx=0; gy=0;
 lose=0; win=0;
 winfx=0; losefx=0;
 
+cleared=0;
+
 if instance_exists(oServer){
 var xpyp;
 xp=choose(112+320,room_width-112-320);
@@ -80,6 +82,10 @@ spike.owner=floor(random(3));
           <argument>
             <kind>1</kind>
             <string>if instance_exists(oPlayer){px=oPlayer.x; py=oPlayer.y}
+
+cleared+=(oClient.cleared-cleared)*.05;
+view_wview = 640 - (320 * min (10,cleared)/10);
+view_hview = 480 - (240 * min (10,cleared)/10);
 
 view_xview+=((px-(view_wview/2))-view_xview)*.1;
 view_yview+=((py-(view_hview/2))-view_yview)*.1;
