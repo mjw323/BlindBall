@@ -141,11 +141,7 @@ if( count&gt;0 )
     
     // Reset buffer to start - Networking ALWAYS reads from the START of the buffer
     buffer_seek(player_buffer, buffer_seek_start, 0);
-    
-    // winfx
-   // buffer_write(player_buffer, buffer_f32, oControl.winfx);
-   // buffer_write(player_buffer, buffer_f32, oControl.losefx);
-    
+        
     // Total number of sprites (players+baddies)
     buffer_write(player_buffer, buffer_u32, instance_number(oGoal) + instance_number(oPlayer) + instance_number(oSpike));
 
@@ -186,7 +182,12 @@ if( count&gt;0 )
         buffer_write(global.player_buffer, buffer_s16, 0 );    
         //buffer_write(global.player_buffer, buffer_string, "" );
     }
-    
+
+    // winfx
+   buffer_write(player_buffer, buffer_f32, oControl.winfx);
+   buffer_write(player_buffer, buffer_f32, oControl.losefx);
+
+        
     var buffer_size = buffer_tell(player_buffer);
         
     // Now send all data... to all clients
