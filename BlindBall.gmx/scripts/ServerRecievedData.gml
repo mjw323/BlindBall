@@ -63,8 +63,8 @@
         else if( key==ord('S')) {
             key=3;
         }
-        if player{tweet[key] = 1;}
-            else{tweet2[key] = 1;}
+        if player{with(oClient){tweet[key] = 1;}}
+            else{with(oClient){tweet2[key] = 1;}}
         }
     }
     // Is this a NAME command?

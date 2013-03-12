@@ -30,6 +30,11 @@ clientx = 64;   // player start X and Y
 clienty = 192;
 PlayerName=global.ServerName;   // get the name that was selected (it's a server OR player name)
 
+for(i=0;i&lt;4;i+=1){
+    tweet[i] = false;
+    tweet2[i] = false;
+    }
+
 winfx=0; losefx=0;
 
 // Create a buffer for the network messages
@@ -218,12 +223,12 @@ for(i=0;i&lt;sprites;i++){
     //draw_text(xx+16,yy-20,name);
 }
 
-with(oServer){
+//with(oServer){
 draw_set_color(c_lime);
 for(i=0;i&lt;4;i+=1){draw_set_alpha(power(tweet[i],1/4)); draw_circle(px+lengthdir_x(60,i*90),py+lengthdir_y(60,i*90),(1-sqr(tweet[i]))*30,true);}
 draw_set_color(c_fuchsia);
 for(i=0;i&lt;4;i+=1){draw_set_alpha(power(tweet2[i],1/4)); draw_circle(px+lengthdir_x(60,i*90),py+lengthdir_y(60,i*90),(1-sqr(tweet2[i]))*30,true);}
-}
+//}
 
 draw_set_alpha(.75);
 draw_set_color(c_red); draw_circle(view_xview+320,view_yview+240,sqr(losefx)*sqrt(sqr(320)+sqr(320)),false);
