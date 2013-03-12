@@ -347,12 +347,20 @@ instance_create(0,0,oControl);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Display connected players, and number of baddies left.
-/*
-draw_set_halign(fa_left);
-draw_set_font(font0);
-draw_set_color(c_red);
-draw_text(10,10,"players: "+string(global.PlayerTotal) );
+            <string>if global.PlayerTotal&lt;2{
+draw_set_alpha(1); draw_set_halign(fa_left);
+draw_set_color(c_black);
+draw_text_transformed(5+1,5+1,"Looking for player 2"+string_repeat(".",round(1.5+(1.5*sin(current_time/500)))),.5,.5,0);
+draw_set_color(c_aqua);
+draw_text_transformed(5,5,"Looking for player 2"+string_repeat(".",round(1.5+(1.5*sin(current_time/500)))),.5,.5,0);
+}
+else{
+draw_set_alpha(1); draw_set_halign(fa_left);
+draw_set_color(c_white);
+draw_text_transformed(5+1,5+1,"connected",.25,.25,0);
+draw_set_color(c_aqua);
+draw_text_transformed(5,5,"connected",.25,.25,0);
+}
 </string>
           </argument>
         </arguments>
