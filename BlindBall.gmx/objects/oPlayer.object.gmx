@@ -154,6 +154,8 @@ y=max(240,min(room_height-240,y));
           <argument>
             <kind>1</kind>
             <string>oControl.lose=1;
+
+if oControl.winfx=0 and oControl.losefx = 0 { sound_play(loseSnd); }
 </string>
           </argument>
         </arguments>
@@ -177,6 +179,8 @@ y=max(240,min(room_height-240,y));
           <argument>
             <kind>1</kind>
             <string>oControl.win=1;
+
+if oControl.winfx=0 and oControl.losefx = 0 { sound_play(winSnd); }
 </string>
           </argument>
         </arguments>
