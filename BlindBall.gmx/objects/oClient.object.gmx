@@ -213,6 +213,12 @@ for(i=0;i&lt;sprites;i++){
     //draw_text(xx+16,yy-20,name);
 }
 
+with(oPlayer){
+draw_set_color(c_lime);
+for(i=0;i&lt;4;i+=1){draw_set_alpha(power(tweet[i],1/4)); draw_circle(x+lengthdir_x(60,i*90),y+lengthdir_y(60,i*90),(1-sqr(tweet[i]))*30,true);}
+draw_set_color(c_fuchsia);
+for(i=0;i&lt;4;i+=1){draw_set_alpha(power(tweet2[i],1/4)); draw_circle(x+lengthdir_x(60,i*90),y+lengthdir_y(60,i*90),(1-sqr(tweet[i]))*30,true);}
+}
 
 draw_set_alpha(.75);
 draw_set_color(c_red); draw_circle(view_xview+320,view_yview+240,sqr(losefx)*sqrt(sqr(320)+sqr(320)),false);
@@ -226,6 +232,102 @@ draw_set_color(c_white); draw_text(view_xview+100,view_yview+100,"Win.");
 
 draw_set_halign(fa_center); draw_set_alpha(power(max(winfx,losefx),3));
 draw_text(view_xview+(view_wview/2),view_yview+(view_hview/2),"Press space.");
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="87">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Tell server UP was pressed
+SendKey(ord('W'),1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="83">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Tell server UP was pressed
+SendKey(ord('S'),1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="68">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Tell server UP was pressed
+SendKey(ord('D'),1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="65">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Tell server UP was pressed
+SendKey(ord('A'),1);
 </string>
           </argument>
         </arguments>

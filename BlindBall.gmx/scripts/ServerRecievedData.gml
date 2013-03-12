@@ -20,6 +20,8 @@
         var updown = buffer_read(buff, buffer_s16 );
         
         var player = buffer_read(buff, buffer_s16 );
+        
+        var dodir=1;
     
         // translate keypress into an index for our player array.
         if( key==vk_left ) {
@@ -34,7 +36,9 @@
         else if( key==vk_down) {
             key=DOWN_KEY;
         }
+        else{dodir=0;}
          
+        if dodir{
         // translate updown into a bool for the player array       
         if( updown==0 ){
             if player{inst.keys[key] = false;}
@@ -44,6 +48,23 @@
             if player{inst.keys[key] = true;}
             else{inst.keys2[key] = true;}
             if inst.keys[key]>2{inst.keys[key]=2}
+        }
+        }
+        else{ //tweet
+        if( key==ord('D') ) {
+            key=0;
+        }
+        else if( key==ord('W') ) {
+            key=1;
+        }
+        else if( key==ord('A') ) {
+            key=2;
+        }
+        else if( key==ord('S')) {
+            key=3;
+        }
+        if player{inst.tweet[key] = 1;}
+            else{inst.tweet2[key] = 1;}
         }
     }
     // Is this a NAME command?
