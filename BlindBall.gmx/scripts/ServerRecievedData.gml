@@ -53,15 +53,19 @@
         else{ //tweet
         if( key==ord('D') ) {
             key=0;
+            sound_play(tweetSnd);
         }
         else if( key==ord('W') ) {
             key=1;
+            sound_play(tweetSnd);
         }
         else if( key==ord('A') ) {
             key=2;
+            sound_play(tweetSnd);
         }
         else if( key==ord('S')) {
             key=3;
+            sound_play(tweetSnd);
         }
         if player{with(oClient){tweet[key] = 1;}}
             else{with(oClient){tweet2[key] = 1;}}
