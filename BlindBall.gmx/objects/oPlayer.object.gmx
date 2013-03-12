@@ -35,9 +35,6 @@ PlayerName="";
 for(var i=0;i&lt;4;i++){
     keys[i] = false;
     keys2[i] = false;
-    
-    tweet[i] = false;
-    tweet2[i] = false;
 }
 
 // basic movement setup
@@ -131,11 +128,6 @@ hspeed=max(-6,min(6,hspeed));
 vspeed=max(-6,min(6,vspeed));
 
 if oClient.winfx&gt;0 or oClient.losefx&gt;0{hspeed=0; vspeed=0;}
-
-for(i=0;i&lt;4;i+=1){
-if tweet[i]&gt;0{tweet[i]-=(1/15);}
-if tweet2[i]&gt;0{tweet2[i]-=(1/15);}
-}
 
 x=max(320,min(room_width-320,x));
 y=max(240,min(room_height-240,y));
