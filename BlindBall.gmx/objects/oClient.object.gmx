@@ -39,6 +39,11 @@ for(i=0;i&lt;4;i+=1){
 
 winfx=0; losefx=0;
 
+spd=0;
+sound_volume(moveSnd,0);
+sound_loop(moveSnd);
+
+
 // Create a buffer for the network messages
 buff = buffer_create(256, buffer_grow, 1);
 // Create a TCP/IP socket
@@ -89,6 +94,29 @@ alarm[0]=120;
             <string>/// Send keep alive "ping" to server
 SendKeepAlive();
 alarm[0]=120;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>sound_volume(moveSnd,power(min(1,spd/7.5),4));
 </string>
           </argument>
         </arguments>
@@ -145,6 +173,7 @@ if( client == eventid )
            winfx = buffer_read(buff, buffer_f32 ); 
            losefx = buffer_read(buff, buffer_f32 ); 
            cleared = buffer_read(buff, buffer_s16 ); 
+           spd = buffer_read(buff, buffer_f32 ); 
            
            for(i=0;i&lt;4;i+=1){
            tweet[i] = buffer_read(buff, buffer_f32 );

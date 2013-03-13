@@ -41,9 +41,7 @@ for(var i=0;i&lt;4;i++){
 xspeed = 2;
 grav=2;
 jump=false;
-dir=0;
-
-global.PlayerTotal++;        
+dir=0;    
 
 
 

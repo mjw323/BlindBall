@@ -14,7 +14,7 @@
     {
         // add client to our list of connected clients
         ds_list_add( socketlist, sock );
-
+        global.PlayerTotal++;    
         // Create a new player, and pick a random colour for that player        
         var inst = oPlayer;
        // inst.image_blend = ColourArray[colourindex];
@@ -28,8 +28,8 @@
         // disconnect a CLIENT. First find the player instance using the socket ID as a lookup
         var inst = ds_map_find_value(Clients, sock );
         // Create a disconnecting "PUFF" at the current coords
-        instance_create( inst.x, inst.y, oPuff );
-
+        //instance_create( inst.x, inst.y, oPuff );
+        global.PlayerTotal--;    
                 // Delete the socket from out map, and kill the player instance
         ds_map_delete(Clients, sock );
 //        with(inst) { instance_destroy(); }

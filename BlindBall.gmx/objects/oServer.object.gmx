@@ -193,6 +193,7 @@ if( count&gt;0 )
    buffer_write(player_buffer, buffer_f32, oControl.winfx);
    buffer_write(player_buffer, buffer_f32, oControl.losefx);
    buffer_write(player_buffer, buffer_s16, cleared);
+   buffer_write(player_buffer, buffer_f32, oPlayer.speed);
 
     for(i=0;i&lt;4;i+=1){
     buffer_write(player_buffer, buffer_f32, max(0,oClient.tweet[i]-(1/15)));
