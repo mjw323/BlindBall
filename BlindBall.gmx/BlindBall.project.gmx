@@ -9,6 +9,8 @@
     <sound>sound\loseSnd</sound>
     <sound>sound\tweetSnd</sound>
     <sound>sound\moveSnd</sound>
+    <sound>sound\music_1</sound>
+    <sound>sound\music_2</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\walk_right</sprite>
@@ -69,6 +71,7 @@
     <object>objects\oControl</object>
     <object>objects\oGoal</object>
     <object>objects\oSpike</object>
+    <object>objects\oMusicplayer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Menu</room>

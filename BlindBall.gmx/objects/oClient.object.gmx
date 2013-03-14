@@ -116,7 +116,7 @@ alarm[0]=120;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sound_volume(moveSnd,power(min(1,spd/7.5),4));
+            <string>sound_volume(moveSnd,power(min(1,spd/5),4));
 </string>
           </argument>
         </arguments>

@@ -139,10 +139,10 @@ room_goto(Level1);
             <kind>1</kind>
             <string>/// Detect clicking on server list
 
-var yindex = 40;
+var yindex = (room_height/2);
 var count = ds_list_size(global.serverlist);
-if( mouse_y&gt;40 &amp;&amp; mouse_y&lt;(40+(count*30)) ){
-    var picked = floor(((mouse_y-40)/30) );
+if( mouse_y&gt;yindex &amp;&amp; mouse_y&lt;(yindex+(count*30)) ){
+    var picked = floor(((mouse_y-yindex)/30) );
     global.connectip = ds_list_find_value(global.serverlist, picked );
     alarm[0] = 2;
 }

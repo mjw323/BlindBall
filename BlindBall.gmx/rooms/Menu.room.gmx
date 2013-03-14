@@ -53,6 +53,7 @@
     <instance objName="oMenu" x="0" y="0" name="inst_76F20138" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCreateServerButton" x="176" y="448" name="inst_67D0DDA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oTextBox" x="240" y="432" name="iServerName" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oMusicplayer" x="0" y="32" name="inst_214FE394" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
